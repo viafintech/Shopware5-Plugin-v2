@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/5.3/engine/Shopware/Components/Plugin/schema/config.xsd">
+    <elements>
+        <element required="true" type="text" scope="shop">
+            <name>division_id</name>
+            <label lang="de">Division ID</label>
+            <label lang="en">Division ID</label>
+            <value></value>
+            <description lang="de">Bitte geben Sie die Division-ID ein. Diese erhalten Sie im Barzahlen Control Center.</description>
+            <description lang="en">Please enter the Division-ID of your division. You can receive this in the Barzahlen control center.</description>
+        </element>
+        <element required="true" type="text" scope="shop">
+            <name>api_key</name>
+            <label lang="de">API Schlüssel</label>
+            <label lang="en">API Key</label>
+            <value></value>
+            <description lang="de">Bitte geben Sie den API Schlüssel Ihrer Division ein. Diese erhalten Sie im Barzahlen Control Center.</description>
+            <description lang="en">Please enter the api key of your division. You can receive this in the Barzahlen control center.</description>
+        </element>
+        <element required="true" type="text" scope="shop">
+            <name>stores_api_key</name>
+            <label lang="de">Stores-Api-Schlüssel</label>
+            <label lang="en">Stores-Api-Key</label>
+            <value></value>
+            <description lang="de">Bitte geben Sie den Stores-Api-Key Ihrer Division ein. Diese erhalten Sie im Barzahlen Control Center.</description>
+            <description lang="en">Please enter the stores api key of your division. You can receive this in the Barzahlen control center.</description>
+        </element>
+        <element required="true" type="number" scope="shop">
+            <name>max_sum</name>
+            <label lang="de">Maximale Summe</label>
+            <label lang="en">Max Sum</label>
+            <value>999</value>
+            <description lang="de">Bitte geben Sie die maximale Summe ein, mit der Sie via Barzahlen bezahlen möchten.</description>
+            <description lang="en">Please enter the maximum amount you want a customer to pay with ViaCash</description>
+        </element>
+        <element required="true" type="boolean" scope="shop">
+            <name>sandbox_mode</name>
+            <label lang="de">Testmodus/Sandbox</label>
+            <label lang="en">Testmode/Sandbox</label>
+            <description lang="de">Aktivieren Sie den Sandbox-Testmodus zum Testen des Bezahlens</description>
+            <description lang="en">Activate the sandbox test mode to test the payment</description>
+        </element>
+    </elements>
+</config>
