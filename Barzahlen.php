@@ -35,7 +35,7 @@ class Barzahlen extends Plugin
             'active' => 1,
             'position' => 0,
             'additionalDescription' =>
-                '<img src="http://your-image-url"/>'
+                '<img src="https://cdn.barzahlen.de/images/viafintech_splitlogo.png"/>'
                 . '<div id="payment_desc">'
                 . '  Pay online in cash | Online bar bezahlen '
                 . '</div>'
