@@ -1,6 +1,6 @@
 <?php
 
-namespace Barzahlen;
+namespace ZerintBarzahlenViacash;
 
 class Middleware
 {

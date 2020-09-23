@@ -1,8 +1,8 @@
 <?php
-namespace Barzahlen;
+namespace ZerintBarzahlenViacash;
 
-use Barzahlen\Request\Autocorrect;
-use Barzahlen\Request\Validate;
+use ZerintBarzahlenViacash\Request\Autocorrect;
+use ZerintBarzahlenViacash\Request\Validate;
 
 class Translate
 {

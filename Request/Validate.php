@@ -1,8 +1,8 @@
 <?php
-namespace Barzahlen\Request;
+namespace ZerintBarzahlenViacash\Request;
 
-use Barzahlen\Exception\ApiException;
-use Barzahlen\Translate;
+use ZerintBarzahlenViacash\Exception\ApiException;
+use ZerintBarzahlenViacash\Translate;
 
 class Validate
 {

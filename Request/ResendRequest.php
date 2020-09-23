@@ -1,6 +1,6 @@
 <?php
 
-namespace Barzahlen\Request;
+namespace ZerintBarzahlenViacash\Request;
 
 class ResendRequest extends Request
 {

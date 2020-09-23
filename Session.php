@@ -1,5 +1,5 @@
 <?php
-namespace Barzahlen;
+namespace ZerintBarzahlenViacash;
 
 class Session
 {

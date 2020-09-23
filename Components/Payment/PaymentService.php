@@ -1,6 +1,6 @@
 <?php
 
-namespace Barzahlen\Components\Payment;
+namespace ZerintBarzahlenViacash\Components\Payment;
 
 class PaymentService
 {

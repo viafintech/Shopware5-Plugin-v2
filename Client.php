@@ -1,9 +1,9 @@
 <?php
 
-namespace Barzahlen;
+namespace ZerintBarzahlenViacash;
 
-use Barzahlen\Request\Request;
-use Barzahlen\Exception as Exception;
+use ZerintBarzahlenViacash\Request\Request;
+use ZerintBarzahlenViacash\Exception as Exception;
 
 class Client
 {
@@ -154,15 +154,15 @@ class Client
 
             $response = json_decode($response);
             $errorMapping = array(
-                'auth'              => '\Barzahlen\Exception\AuthException',
-                'transport'         => '\Barzahlen\Exception\TransportException',
-                'idempotency'       => '\Barzahlen\Exception\IdempotencyException',
-                'rate_limit'        => '\Barzahlen\Exception\RateLimitException',
-                'invalid_format'    => '\Barzahlen\Exception\InvalidFormatException',
-                'invalid_state'     => '\Barzahlen\Exception\InvalidStateException',
-                'invalid_parameter' => '\Barzahlen\Exception\InvalidParameterException',
-                'not_allowed'       => '\Barzahlen\Exception\NotAllowedException',
-                'server_error'      => '\Barzahlen\Exception\ServerException'
+                'auth'              => '\ZerintBarzahlenViacash\Exception\AuthException',
+                'transport'         => '\ZerintBarzahlenViacash\Exception\TransportException',
+                'idempotency'       => '\ZerintBarzahlenViacash\Exception\IdempotencyException',
+                'rate_limit'        => '\ZerintBarzahlenViacash\Exception\RateLimitException',
+                'invalid_format'    => '\ZerintBarzahlenViacash\Exception\InvalidFormatException',
+                'invalid_state'     => '\ZerintBarzahlenViacash\Exception\InvalidStateException',
+                'invalid_parameter' => '\ZerintBarzahlenViacash\Exception\InvalidParameterException',
+                'not_allowed'       => '\ZerintBarzahlenViacash\Exception\NotAllowedException',
+                'server_error'      => '\ZerintBarzahlenViacash\Exception\ServerException'
             );
 
             if (isset($errorMapping[$response->error_class])) {

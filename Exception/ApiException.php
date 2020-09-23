@@ -1,8 +1,8 @@
 <?php
 
-namespace Barzahlen\Exception;
+namespace ZerintBarzahlenViacash\Exception;
 
-use Barzahlen\Translate;
+use ZerintBarzahlenViacash\Translate;
 
 class ApiException extends \Exception
 {

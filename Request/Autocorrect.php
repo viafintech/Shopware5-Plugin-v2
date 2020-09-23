@@ -1,8 +1,8 @@
 <?php
 
-namespace Barzahlen\Request;
+namespace ZerintBarzahlenViacash\Request;
 
-use Barzahlen\Exception\ApiException;
+use ZerintBarzahlenViacash\Exception\ApiException;
 
 class Autocorrect
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace Barzahlen\Request;
+namespace ZerintBarzahlenViacash\Request;
 
-use Barzahlen\Request\Validate;
-use Barzahlen\Request\Autocorrect;
-use Barzahlen\Request\Sanitize;
+use ZerintBarzahlenViacash\Request\Validate;
+use ZerintBarzahlenViacash\Request\Autocorrect;
+use ZerintBarzahlenViacash\Request\Sanitize;
 
 class CreateRequest extends Request
 {

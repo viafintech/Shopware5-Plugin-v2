@@ -1,6 +1,6 @@
 <?php
 
-namespace Barzahlen\Exception;
+namespace ZerintBarzahlenViacash\Exception;
 
 class NotAllowedException extends ApiException
 {

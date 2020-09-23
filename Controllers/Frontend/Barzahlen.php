@@ -1,13 +1,10 @@
 <?php
-ini_set('error_reporting',E_ALL);
-ini_set('display_errors',1);
-
-use Barzahlen\Components\Payment\PaymentResponse;
-use Barzahlen\Components\Payment\PaymentService;
-use Barzahlen\Client;
-use Barzahlen\Exception\ApiException;
-use Barzahlen\Request\CreateRequest;
-use Barzahlen\Webhook;
+use ZerintBarzahlenViacash\Components\Payment\PaymentResponse;
+use ZerintBarzahlenViacash\Components\Payment\PaymentService;
+use ZerintBarzahlenViacash\Client;
+use ZerintBarzahlenViacash\Exception\ApiException;
+use ZerintBarzahlenViacash\Request\CreateRequest;
+use ZerintBarzahlenViacash\Webhook;
 use Shopware\Models\Order\Order;
 
 
@@ -32,7 +29,7 @@ class Shopware_Controllers_Frontend_Barzahlen extends Shopware_Controllers_Front
         Shopware()->Container()->get('pluginlogger')->info('Barzahlen preDispatch');
 
         /** @var \Shopware\Components\Plugin $plugin */
-        $plugin = $this->get('kernel')->getPlugins()['Barzahlen'];
+        $plugin = $this->get('kernel')->getPlugins()['ZerintBarzahlenViacash'];
 
         $this->get('template')->addTemplateDir($plugin->getPath() . '/Resources/views/');
     }
@@ -51,8 +48,8 @@ class Shopware_Controllers_Frontend_Barzahlen extends Shopware_Controllers_Front
         $aUser = $this->getUser();
         $aBasket = $this->getBasket();
 
-        $sDivisionID = Shopware()->Config()->getByNamespace('Barzahlen','division_id');
-        $sApiKey = Shopware()->Config()->getByNamespace('Barzahlen','api_key');
+        $sDivisionID = Shopware()->Config()->getByNamespace('ZerintBarzahlenViacash','division_id');
+        $sApiKey = Shopware()->Config()->getByNamespace('ZerintBarzahlenViacash','api_key');
 
         $sToken = $oService->createPaymentToken($this->getAmount(), $aUser["additional"]["user"]["customernumber"]);
 
@@ -93,7 +90,7 @@ class Shopware_Controllers_Frontend_Barzahlen extends Shopware_Controllers_Front
 
             Shopware()->Session()->checkout_token = $oApiResponse->checkout_token;
 
-            $bSandboxMode = Shopware()->Config()->getByNamespace('Barzahlen','sandbox_mode');
+            $bSandboxMode = Shopware()->Config()->getByNamespace('ZerintBarzahlenViacash','sandbox_mode');
             if($bSandboxMode) {
                 Shopware()->Session()->sandbox = "-sandbox";
             } else {
@@ -155,7 +152,7 @@ class Shopware_Controllers_Frontend_Barzahlen extends Shopware_Controllers_Front
             $aHeader = array_merge($aHeaders, $_SERVER);
 
             // Get api key from config
-            $sApiKey = Shopware()->Config()->getByNamespace('Barzahlen','api_key');
+            $sApiKey = Shopware()->Config()->getByNamespace('ZerintBarzahlenViacash','api_key');
 
             // Verify BZ signature before continue
             $oWebhook = new Webhook($sApiKey);
