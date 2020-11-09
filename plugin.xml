@@ -5,7 +5,7 @@
     <label lang="en">ViaCash Payment</label>
     <label lang="de">Barzahlen Payment</label>
 
-    <version>v2.0.0</version>
+    <version>2.0.0</version>
     <copyright>(c) Cash Payment Solutions AG, encurio GmbH</copyright>
     <author>Cash Payment Solutions AG, encurio GmbH</author>
     <link>https://www.barzahlen.de/</link>
@@ -15,7 +15,7 @@
 
     <compatibility minVersion="5.3.0" maxVersion="5.99.99"/>
 
-    <changelog version="v2.0.0">
+    <changelog version="2.0.0">
         <changes lang="de">Anbindung der neuen Barzahlen V2 API</changes>
         <changes lang="en">Implementation of the new ViaCash V2 API</changes>
     </changelog>
