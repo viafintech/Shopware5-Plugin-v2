@@ -2,22 +2,22 @@
 <plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/5.3/engine/Shopware/Components/Plugin/schema/plugin.xsd">
 
-    <label lang="en">ViaCash Payment</label>
+    <label lang="en">viacash Payment</label>
     <label lang="de">Barzahlen Payment</label>
 
     <version>2.0.0</version>
-    <copyright>(c) Cash Payment Solutions AG, encurio GmbH</copyright>
-    <author>Cash Payment Solutions AG, encurio GmbH</author>
+    <copyright>(c) viafintech GmbH, encurio GmbH</copyright>
+    <author>viafintech GmbH, encurio GmbH</author>
     <link>https://www.barzahlen.de/</link>
     <license>proprietary</license>
-    <description lang="en">Barzahlen Viacash v2 Api Shopware 5.3+ Plugin - Viacash is the largest bank-independent payment system in Europe, which allows deposits and withdrawals of cash via barcode in stores.</description>
-    <description lang="de">Barzahlen Viacash v2 Api Shopware 5.3+ Plugin - Barzahlen is the largest bank-independent payment system in Europe, which allows deposits and withdrawals of cash via barcode in stores.</description>
+    <description lang="en">Barzahlen viacash v2 Api Shopware 5.3+ Plugin - viacash is the largest bank-independent payment system in Europe, which allows deposits and withdrawals of cash via barcode in stores.</description>
+    <description lang="de">Barzahlen viacash v2 Api Shopware 5.3+ Plugin - Barzahlen is the largest bank-independent payment system in Europe, which allows deposits and withdrawals of cash via barcode in stores.</description>
 
     <compatibility minVersion="5.3.0" maxVersion="5.99.99"/>
 
     <changelog version="2.0.0">
         <changes lang="de">Anbindung der neuen Barzahlen V2 API</changes>
-        <changes lang="en">Implementation of the new ViaCash V2 API</changes>
+        <changes lang="en">Implementation of the new viacash V2 API</changes>
     </changelog>
 
 </plugin>
