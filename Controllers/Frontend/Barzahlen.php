@@ -55,7 +55,9 @@ class Shopware_Controllers_Frontend_Barzahlen extends Shopware_Controllers_Front
 
         try {
 
-            $oClient = new Client($sDivisionID, $sApiKey, true);
+            $bSandboxMode = Shopware()->Config()->getByNamespace('ZerintBarzahlenViacash','sandbox_mode');
+
+            $oClient = new Client($sDivisionID, $sApiKey, $bSandboxMode);
 
             $oRequest = new CreateRequest();
             $oRequest->setSlipType('payment');
@@ -90,7 +92,6 @@ class Shopware_Controllers_Frontend_Barzahlen extends Shopware_Controllers_Front
 
             Shopware()->Session()->checkout_token = $oApiResponse->checkout_token;
 
-            $bSandboxMode = Shopware()->Config()->getByNamespace('ZerintBarzahlenViacash','sandbox_mode');
             if($bSandboxMode) {
                 Shopware()->Session()->sandbox = "-sandbox";
             } else {
