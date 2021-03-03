@@ -2,6 +2,7 @@
 
 namespace ZerintBarzahlenViacash;
 
+use ZerintBarzahlenViacash\Exception\ApiException;
 use ZerintBarzahlenViacash\Request\Request;
 use ZerintBarzahlenViacash\Exception as Exception;
 
@@ -64,18 +65,11 @@ class Client
 
     /**
      * @param Request $request
+     * @param bool $bHeader
+     * @param bool $bRaw
      * @return string
-     * @throws Exception\ApiException
-     * @throws Exception\AuthException
+     * @throws ApiException
      * @throws Exception\CurlException
-     * @throws Exception\IdempotencyException
-     * @throws Exception\InvalidFormatException
-     * @throws Exception\InvalidParameterException
-     * @throws Exception\InvalidStateException
-     * @throws Exception\NotAllowedException
-     * @throws Exception\RateLimitException
-     * @throws Exception\ServerException
-     * @throws Exception\TransportException
      */
     public function handle($request, $bHeader = false, $bRaw = false)
     {
@@ -148,16 +142,8 @@ class Client
     /**
      * @param string $response
      * @param string $contentType
-     * @throws Exception\ApiException
-     * @throws Exception\AuthException
-     * @throws Exception\IdempotencyException
-     * @throws Exception\InvalidFormatException
-     * @throws Exception\InvalidParameterException
-     * @throws Exception\InvalidStateException
-     * @throws Exception\NotAllowedException
-     * @throws Exception\RateLimitException
-     * @throws Exception\ServerException
-     * @throws Exception\TransportException
+     * @return string|void
+     * @throws \Exception
      */
     public function checkResponse($response, $contentType)
     {
@@ -167,7 +153,9 @@ class Client
                 return;
             }
 
-            $response = json_decode($response);
+            $oResponse = json_decode($response);
+
+            /*
             $errorMapping = array(
                 'auth'              => '\ZerintBarzahlenViacash\Exception\AuthException',
                 'transport'         => '\ZerintBarzahlenViacash\Exception\TransportException',
@@ -181,10 +169,11 @@ class Client
             );
 
             if (isset($errorMapping[$response->error_class])) {
-                throw new $errorMapping[$response->error_class]($response->message, $response->request_id);
+                throw new ApiException($response->message, $response->request_id);
             }
+            */
 
-            throw new Exception\ApiException($response->message, $response->request_id);
+            throw new \Exception($oResponse->request_id . "|" . $oResponse->message);
         }
     }
 
