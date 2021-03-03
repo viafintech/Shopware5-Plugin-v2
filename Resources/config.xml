@@ -51,6 +51,7 @@
                     function() {
                       Ext.Ajax.request({
                         url: 'barzahlen/test',
+                        noCache: true,
                         success: function (response) {
                           Shopware.Msg.createGrowlMessage(response.statusText, response.responseText)
                         },

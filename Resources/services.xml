@@ -6,5 +6,10 @@
         <service id="barzahlen.payment_service"
                  class="ZerintBarzahlenViacash\Components\Payment\PaymentService">
         </service>
+        <service id="barzahlen.subscriber.configuration"
+                 class="ZerintBarzahlenViacash\Subscriber\Configuration">
+            <argument type="service" id="shopware.cache_manager"/>
+            <tag name="shopware.event_subscriber"/>
+        </service>
     </services>
 </container>

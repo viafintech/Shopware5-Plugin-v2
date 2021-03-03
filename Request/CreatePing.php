@@ -16,7 +16,7 @@ class CreatePing extends Request
     /**
      * @var string
      */
-    protected $method = 'POST';
+    protected $method = 'GET';
 
 
 }

@@ -11,6 +11,10 @@ class Shopware_Controllers_Backend_Barzahlen extends \Shopware_Controllers_Backe
     public function testAction()
     {
         try {
+            $this->container->get('events')->notify(
+                'Shopware_Plugins_HttpCache_ClearCache'
+            );
+
             $sDivisionID = Shopware()->Config()->getByNamespace('ZerintBarzahlenViacash','division_id');
             $sApiKey = Shopware()->Config()->getByNamespace('ZerintBarzahlenViacash','api_key');
 
@@ -18,11 +22,16 @@ class Shopware_Controllers_Backend_Barzahlen extends \Shopware_Controllers_Backe
 
             $oRequest = new CreatePing();
 
-            $sResponseJson = $oClient->handle($oRequest);
+            $sResponseJson = $oClient->handle($oRequest,true, true);
 
-            $oApiResponse = json_decode($sResponseJson);
+            if(mb_stripos($sResponseJson, '200 OK')  > 0)
+            {   echo " Test OK";
+            } else {
+                throw new Exception(" Error " . $sResponseJson);
+            }
 
-            return $oApiResponse;
+            return $sResponseJson;
+
         } catch (Exception $exception) {
 
             $this->response->setStatusCode(Response::HTTP_INTERNAL_SERVER_ERROR);
