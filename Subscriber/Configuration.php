@@ -25,14 +25,14 @@ class Configuration implements SubscriberInterface
         $this->cacheManager = $cacheManager;
     }
 
-    public static function getSubscribedEvents(): array
+    public static function getSubscribedEvents()
     {
         return [
             'Enlight_Controller_Action_PostDispatchSecure_Backend_Config' => 'onPostDispatchConfig'
         ];
     }
 
-    public function onPostDispatchConfig(\Enlight_Event_EventArgs $args): void
+    public function onPostDispatchConfig(\Enlight_Event_EventArgs $args)
     {
         /** @var Shopware_Controllers_Backend_Config $subject */
         $subject = $args->get('subject');
