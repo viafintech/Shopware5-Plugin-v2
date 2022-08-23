@@ -30,7 +30,7 @@ class ZerintBarzahlenViacash extends Plugin
 
         $options = [
             'name' => 'barzahlen',
-            'description' => ' Barzahlen/Cash - Online Payment',
+            'description' => ' Barzahlen/viacash - Online Payment',
             'action' => 'frontend/barzahlen',
             'active' => 1,
             'position' => 0,
